@@ -1,0 +1,32 @@
+{% load static %}
+
+    {% if dev_list %}
+        <style>
+        table, th, td{
+            border: 1px solid black;
+        }
+        </style>
+        
+        <table>
+            <tr>
+                <th>DEV_ID</th>
+                <th>DATA CRIAÇÃO</th>            
+                <th>DATA UPDATE</th>
+                <th>THRESHOLDS</th>
+                <th>ERROS</th>
+                <th>PLOTS</th>            
+            </tr>
+            {% for dev in dev_list %}
+                <tr>
+                    <td>{{ dev.dev_id }}</td>
+                    <td>{{ dev.date_creation }}</td>
+                    <td>{{ dev.date_updated }}</td>
+                    <td><a href="{% url 'graphGatherer:thresholds' dev.dev_id %}">Lista</a></td>
+                    <td><a href="{% url 'graphGatherer:errors' dev.dev_id %}">Lista</a></td>
+                    <td><a href="{% url 'graphGatherer:display_graph' dev.dev_id %}">Plots</a></td>
+                </tr>
+            {% endfor %}    
+        </table>
+    {% else %}
+        <p>Não há DACs registrados.</p>
+    {% endif %}

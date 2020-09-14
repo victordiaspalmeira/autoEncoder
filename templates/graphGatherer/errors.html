@@ -1,0 +1,34 @@
+{% if dev_list %}
+    <style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    </style>
+    
+    <table>
+        <tr>
+            <th>TIMESTAMP</th>
+            <th>L1</th>            
+            <th>TAMB</th>
+            <th>TLIQ</th>
+            <th>TSUC</th>
+            <th>PSUC</th>
+            <th>PLIQ</th>
+            <th>TSH</th>
+        </tr>
+        {% for dev in dev_list %}
+            <tr>
+                <td>{{ dev.date }}</td>
+                <td>{{ dev.L1 }}</td>
+                <td>{{ dev.Tamb }}</td>
+                <td>{{ dev.Tliq }}</td>
+                <td>{{ dev.Tsuc }}</td>
+                <td>{{ dev.Psuc }}</td>
+                <td>{{ dev.Pliq }}</td>
+                <td>{{ dev.Tsh }}</td>
+            </tr>
+        {% endfor %}    
+    </table>
+{% else %}
+    <p>Não há DEVs registrados.</p>
+{% endif %}
