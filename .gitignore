@@ -1,8 +1,10 @@
-static/graphGatherer/DAC210191015_L1.png
-static/graphGatherer/DAC210191015_Pliq.png
-static/graphGatherer/DAC210191015_Psuc.png
-static/graphGatherer/DAC210191015_Tamb.png
-static/graphGatherer/DAC210191015_Tliq.png
-static/graphGatherer/DAC210191015_Tsh.png
-static/graphGatherer/DAC210191015_Tsuc.png
-db.sqlite3
+images/*
+*.log
+*.out
+training data/*
+models/*
+intel logs/*
+*.csv
+Pipfile
+Pipfile.lock
+Prototype.code-workspace
