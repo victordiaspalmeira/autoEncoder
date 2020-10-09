@@ -189,6 +189,7 @@ class IntelAutoencoder():
         else:
             v = 0
 
+        #diretório do modelo
         save_path = f"models/{self.dac_id}"
 
         self.model.compile(loss='mae', optimizer='adam')

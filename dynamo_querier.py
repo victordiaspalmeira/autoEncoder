@@ -32,6 +32,8 @@ s
                 tables.append(table_name)
 
         for table in tables:
+            if table in ['placeholder']:
+                continue
             if table in ['DAC21019XXXX_RAW','DAC20719XXXX_RAW']:
                 temp_result = cls.query_single_table(table, **kwargs[1])
                 temp_result = flatten_list(temp_result)
